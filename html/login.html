@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Application de vente en ligne" />
+    <meta name="author" content="Boris Rose" />
+    <meta name="keywords" content="computers, France, ordinateurs" />
+    <meta name="robots" content="index,follow" />
+    <title>ComputerMania</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <script
+      src="https://kit.fontawesome.com/1b1fa6fbda.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--<script defer src="./main.js"></script>-->
+  </head>
+  <body>
+    <header class="app-header" x-data="header">
+      <a> IT Home </a>
+      <nav>
+        <i
+          tabindex="0"
+          role="button"
+          @click="homeHandler"
+          @keyup.enter="homeHandler"
+          class="fa-solid fa-house"
+        ></i>
+        <i
+          tabindex="0"
+          role="button"
+          @click="storeHandler"
+          @keyup.enter="storeHandler"
+          class="fa-solid fa-shop"
+        ></i>
+        <i
+          tabindex="0"
+          role="button"
+          @click="loginHandler"
+          @keyup.enter="loginHandler"
+          class="fa-solid fa-right-to-bracket"
+        ></i>
+      </nav>
+    </header>
+    <main class="app-main login__main" x-data="login">
+      <section>
+        <!-- formulaire -->
+        <form class="form custom-form" x-on:submit="submitHandler">
+          <section class="form__fields">
+            <template x-for="(field,index) in fields">
+              <article>
+                <label :for="field.name"></label>
+                <section>
+                  <i
+                    :class="'fa-solid' + (field.name == 'email' ? ' fa-envelope' : ' fa-lock')"
+                  ></i>
+                  <input
+                    class="input custom-input"
+                    :id="field.name"
+                    :type="field.type ? field.type : 'text'"
+                    :placeholder="field.placeholder"
+                  />
+                </section>
+              </article>
+            </template>
+          </section>
+          <section class="form__buttons">
+            <button class="button" type="submit">Valider</button>
+            <button class="button" type="reset">Réinitialiser</button>
+          </section>
+        </form>
+        <!-- fin du formulaire -->
+      </section>
+
+      <section class="switch-form">
+        <small x-html="message"></small>
+        <span
+          class="switch-button"
+          tabindex="0"
+          role="button"
+          @click="switchFormHandler"
+          @keyup.enter="switchFormHandler"
+        >
+          ici
+        </span>
+      </section>
+
+      <template x-teleport="body">
+        <div
+          class="popup"
+          role="dialog"
+          x-show="showPopup"
+          x-transition.duration.1000ms
+        >
+          <p x-text="popupMessage"></p>
+        </div>
+      </template>
+    </main>
+    <footer id="notification"></footer>
+    <script src="../main.js" type="module"></script>
+  </body>
+</html>

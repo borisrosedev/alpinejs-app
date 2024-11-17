@@ -1,0 +1,26 @@
+{
+  "name": "alpinejs-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "sass:watch": "sass --watch ./sass/styles.scss:./styles.css",
+    "format:write": "prettier . --write",
+    "format:check": "prettier . --check",
+    "eslint:inspect": "npx eslint --inspect-config",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "boris rose",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "alpinejs": "^3.14.3",
+    "firebase": "^11.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.14.0",
+    "prettier": "^3.3.3",
+    "sass": "^1.80.6"
+  }
+}

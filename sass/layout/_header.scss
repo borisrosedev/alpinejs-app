@@ -1,0 +1,28 @@
+@use "../abstracts/mixins";
+
+.app-header {
+  @include mixins.flex-box(row, center, space-between);
+  height: 8vh;
+  padding-inline: 10px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  & > a {
+    color: rgb(6, 110, 236);
+  }
+  nav {
+    display: flex;
+    i {
+      margin-inline: 10px;
+      transition: all ease-in-out 300ms;
+
+      &:hover {
+        transform: scale(1.2);
+        color: rgb(6, 110, 236);
+        cursor: pointer;
+      }
+    }
+  }
+}

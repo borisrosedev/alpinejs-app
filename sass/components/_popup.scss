@@ -1,0 +1,13 @@
+.popup {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 30px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  p {
+    color: #e47a8f;
+  }
+}

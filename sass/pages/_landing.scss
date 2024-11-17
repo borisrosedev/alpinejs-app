@@ -1,0 +1,9 @@
+@use "../abstracts/mixins";
+.landing__main {
+    @include mixins.flex-box(column, center, center);
+
+    button {
+        align-self: center;
+        margin-block: 10px;
+    }
+}

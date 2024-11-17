@@ -1,0 +1,30 @@
+@use "../abstracts/mixins";
+
+.login__main {
+  @include mixins.flex-box(column, center, center);
+
+  & > section:first-of-type {
+    box-shadow: 0 0 2px #fff;
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  small {
+    margin-block: 10px;
+  }
+
+  .switch-form {
+    display: flex;
+    align-items: center;
+
+    .switch-button {
+      color: blue;
+      margin-inline: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

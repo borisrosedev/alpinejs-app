@@ -1,0 +1,36 @@
+@use "../abstracts/mixins";
+
+.custom-form {
+  @include mixins.flex-box(column);
+  width: 100%;
+  & > section:first-of-type {
+    @include mixins.flex-box(column);
+    width: 100%;
+    article {
+      @include mixins.flex-box(column);
+      margin-block: 10px;
+      width: 100%;
+
+      section {
+        @include mixins.flex-box(row, center);
+        border: solid rgb(6, 110, 236) 2px;
+        border-radius: 10px;
+        width: 100%;
+        .custom-input {
+          box-shadow: none;
+          border: none;
+          width: 100%;
+        }
+        i {
+          margin-inline: 10px;
+        }
+      }
+    }
+  }
+
+  & > section:last-of-type {
+    @include mixins.flex-box(row, center, space-between);
+    margin-block: 20px;
+    width: 100%;
+  }
+}

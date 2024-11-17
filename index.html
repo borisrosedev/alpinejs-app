@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Application de vente en ligne" />
+    <meta name="author" content="Boris Rose" />
+    <meta name="keywords" content="computers, France, ordinateurs" />
+    <meta name="robots" content="index,follow" />
+    <title>ComputerMania</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script
+      src="https://kit.fontawesome.com/1b1fa6fbda.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--<script defer src="./main.js"></script>-->
+  </head>
+  <body>
+    <header class="app-header" x-data="header">
+      <a> IT Home </a>
+      <nav>
+        <i
+          tabindex="0"
+          role="button"
+          @click="homeHandler"
+          @keyup.enter="homeHandler"
+          class="fa-solid fa-house"
+        ></i>
+        <i
+          tabindex="0"
+          role="button"
+          @click="storeHandler"
+          @keyup.enter="storeHandler"
+          class="fa-solid fa-shop"
+        ></i>
+        <i
+          tabindex="0"
+          role="button"
+          @click="loginHandler"
+          @keyup.enter="loginHandler"
+          class="fa-solid fa-right-to-bracket"
+        ></i>
+      </nav>
+    </header>
+    <main class="app-main landing__main" x-data="landing">
+      <h1 x-uppercase x-yanis x-cloak x-show="showWelcome" x-transition.duration.1000ms>Bienvenue</h1>
+      <button
+        x-cloak
+        x-show="showCallToAction"
+        x-transition.duration.1000ms
+        @click="storeHandler"
+        @keyup.enter="storeHandler"
+        class="button"
+        x-text="'Découvrir nos produits'"
+      ></button>
+    </main>
+    <footer id="notification"></footer>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
